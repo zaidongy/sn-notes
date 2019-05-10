@@ -3,24 +3,6 @@
 ![Technical](https://placehold.it/15/f03c15/000000?text=+) `Technical`
 ![Conceptual](https://placehold.it/15/c5f015/000000?text=+) `Conceptual`
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [ServiceNow Knowledge 2019 Notes](#servicenow-knowledge-2019-notes)
-  _ [![Technical](https://placehold.it/18/f03c15/000000?text=+) Healthscan](#technicalhttpsplaceholdit18f03c15000000text-healthscan)
-  _ [![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) Virtual Agent](#conceptualhttpsplaceholdit15c5f015000000text-virtual-agent)
-  _ [![Technical](https://placehold.it/18/f03c15/000000?text=+) Reporting on HR Cases](#technicalhttpsplaceholdit18f03c15000000text-reporting-on-hr-cases)
-  _ [![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) Unified Employee Service Center](#conceptualhttpsplaceholdit15c5f015000000text-unified-employee-service-center)
-  _ [![Technical](https://placehold.it/18/f03c15/000000?text=+) Creator Studio for developers](#technicalhttpsplaceholdit18f03c15000000text-creator-studio-for-developers)
-  _ [![Technical](https://placehold.it/18/f03c15/000000?text=+) ServiceNow Developer Blog Implementation](#technicalhttpsplaceholdit18f03c15000000text-servicenow-developer-blog-implementation)
-  _ [![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) A couple of ideas that came to mind in the midst of all this inspiration](#conceptualhttpsplaceholdit15c5f015000000text-a-couple-of-ideas-that-came-to-mind-in-the-midst-of-all-this-inspiration)
-  _ [![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) ITBM Demand Management](#conceptualhttpsplaceholdit15c5f015000000text-itbm-demand-management)
-  _ [![Technical](https://placehold.it/18/f03c15/000000?text=+) Report and Dashboard Cleanups](#technicalhttpsplaceholdit18f03c15000000text-report-and-dashboard-cleanups)
-  _ [![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) Configuration vs Customization](#conceptualhttpsplaceholdit15c5f015000000text-configuration-vs-customization)
-
-<!-- /code_chunk_output -->
-
 ## ![Technical](https://placehold.it/18/f03c15/000000?text=+) Healthscan
 
 - ServiceNow healthscan can assess instance health and upgradability.
