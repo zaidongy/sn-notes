@@ -1,0 +1,12 @@
+cs-link cab larger reports
+new report "Problems ready for CAB review" - only show RCA ready for CAB review state
+problem ready for rca -> open problem records
+add incident column to both, next to problem record
+
+expedited change and high priority BAU, just list sorted by opened date. most recent on top
+
+breakdown cs-link change past 30 days by type
+
+INI report grouped by INI sorted by Number
+
+New report: CTASK migration issue checkbox = true and validation = pass

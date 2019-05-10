@@ -1,0 +1,7 @@
+AD Audit Logs - Never add deprovision group
+Custom Workflow Activity -> Global -> CSMC-AD -> AD - Add user to multiple AD Groups
+	activityinput.targethost - midserver IP Address use int01 or int02
+	activityinput.adusername - AD User name
+	activityinput.adgroups - Find in the AD Audit Logs
+	returns a JSON object with output field
+		GUID

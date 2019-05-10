@@ -1,0 +1,24 @@
+EDI Dashboard Notes
+
+Open request limit 6 month per week and per month (done)
+
+for all reports, exclude closed tickets/cancelled, only keep active tickets (done)
+
+Number of closed incidents and requests by person per month/week (done)
+Number of cancelled and requests by person per month/week (done)
+
+2 Single Score + 2 pie charts
+total number of close, open, unassigned. both incident and requests (done)
+Anything that's open/active (done)
+
+Subteam for requests as well per week/month (done)
+
+Clairty reports (done)
+	1. Active Clarity Requests, since beginning, description = "complete uat" or "gather create requiremnt" 
+	2. Active Clarity Requests, since beginning, description = "CS-Link Reporting Tasks"
+
+	RITM0157523
+	how many tasks are there for each team
+
+Add to dashboard
+Overview -> more detailed

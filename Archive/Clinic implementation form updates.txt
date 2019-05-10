@@ -1,0 +1,31 @@
+New department, relocation ,expansion of current location - 4 tasks Amb, Cadence, ADT, PB (Done)
+
+for onboarding only (done)
+Use existing department visit type? (yes/no) if no then "please list new visit types" (mandatory)
+
+new dep, relocation, expansion(DONE)
+Instead of visit types, List Visit Types or a department to copy from (done)
+
+Imaging modality not required on all forms (done)
+other practice details not required for all forms (done)
+
+Description update: after entirety (done)
+EIS may followup for additional details prior to implementation (done)
+
+CS-Link Department to Primary CS-Link Department (required), then new field "Other Departments" (not required) to be on same row (done)
+Outpatient area will have own row (done)
+
+Provider Role, Provider Specialty on same row (done)
+
+onboarding request (DONE)
+Between (provider pool) and requested Go-Live date
+Enroll in Appointment Reminder (WELL) - Yes/No question
+
+New department (revenue spelling) (Done)
+
+PB Only (done)
+Create new revenue location or use existing
+Choices:	
+	New Revenue Location
+	Use Existing Revenue Location 
+Specify new revenue location name or existing revenue location (new field)

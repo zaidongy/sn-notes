@@ -1,0 +1,15 @@
+HR Case Information Needed - Additional Information use worknotes instead of comments, worknote is internal visible only.
+
+HR Case commented by Requestor - asking to call HR Shared service center for assistence when they are the ones working on the ticket.
+
+hrc.resolved - Approval and reopen link
+Click here to reject the completion and re-open the HR Request
+ - Re:HRC0001742 - Reject Completion
+
+Escalation Links needed 
+ - Link "Click here to respond to the escalation"
+ - Re:HRC0001742 - Escalation Response
+
+Knowledge article approval - high importance, when case approval is not high importance
+
+Knowledge article should put some kind of container for number and short description, it looks confusing right now
