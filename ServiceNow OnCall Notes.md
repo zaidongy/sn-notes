@@ -16,7 +16,7 @@
 ## Mainspring
 
 - Mainspring -> Contact Clemente or whomever is oncall for MONITORING
-- Check ECC Queue if system is slow, delete error records with source:= <http://stcroixweb.csmc.edu/IntegrationEngine/integrationEngine.svc/text>
+- Check ECC Queue if system is slow, delete error records with source = `http://stcroixweb.csmc.edu/IntegrationEngine/integrationEngine.svc/text`
 
 ## User Administration
 
