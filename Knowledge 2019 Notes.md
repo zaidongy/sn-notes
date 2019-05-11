@@ -49,7 +49,7 @@
 
 ## ![Technical](https://placehold.it/18/f03c15/000000?text=+) ServiceNow Developer Blog Implementation
 
-- https://developer.servicenow.com/blog.do
+- `https://developer.servicenow.com/blog.do`
 - `blog.do` is a processesor in the platform
 - Uses VFS! Virtual File System, speaker said he will post the implementation on the SN store which is super useful because SN doesn't have a file system
 - Pipeline
@@ -102,7 +102,7 @@
   2. Performance
   3. Design
   4. Access
-  5. Compliance
+  5. Compliant with **naming convention**
 
 ## ![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) Configuration vs Customization
 
