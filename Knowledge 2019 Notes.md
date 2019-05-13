@@ -6,7 +6,7 @@
 ## ![Technical](https://placehold.it/18/f03c15/000000?text=+) Healthscan
 
 - ServiceNow healthscan can assess instance health and upgradability.
-- Review all configurations and customizations, can give us a holistic view of the instance deviant from OOO
+- Review all configurations and customizations, can give us a holistic view of the instance deviant from OOB
 - [Documentation](https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/data-sheet/ds-configuration-review.pdf)
 
 ## ![#Conceptual](https://placehold.it/15/c5f015/000000?text=+) Virtual Agent
@@ -29,7 +29,7 @@
 
 - Single portal > multiple portals
   - Better UX, Better UI, easier to maintain, seemless to employees
-- In the future, intranet could be replaced with Service Portal. If company compliance policies allows
+- In the future, intranet could be replaced with Service Portal, if the company policies allow for it
 - Use metrics for continuous improvement after deployment
 - Hire technical writers to write **end user focused** KB Articles, articles should be:
   1. Concise
