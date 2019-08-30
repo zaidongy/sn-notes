@@ -1,6 +1,7 @@
 # CAAF Implementation
 
 ## Tables of Contents
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -68,17 +69,17 @@ Example: This code will generate three elements in the same row spaced automatic
 
 ```html
 <div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            First element for this row!
-        </div>
-        <div class="col-sm-4">
-            Second element for this row!
-        </div>
-        <div class="col-sm-4">
-            Third element for this row!
-        </div>
+  <div class="row">
+    <div class="col-sm-4">
+      First element for this row!
     </div>
+    <div class="col-sm-4">
+      Second element for this row!
+    </div>
+    <div class="col-sm-4">
+      Third element for this row!
+    </div>
+  </div>
 </div>
 ```
 
@@ -88,16 +89,14 @@ Here is the basic structure of a form with Bootstrap
 
 ```html
 <form name="caaf">
-    <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input type="text" class="form-control" id="first_name
-            name="first_name" placeholder="First Name"
-            ng-model="c.data.first_name" ng-required="true" />
-        <label for="last_name">Last Name</label>
-        <input type="text" class="form-control" id="last_name
-            name="last_name" placeholder="Last Name"
-            ng-model="c.data.last_name" ng-required="true" />
-    </div>
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" id="first_name name="first_name"
+    placeholder="First Name" ng-model="c.data.first_name" ng-required="true" />
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name name="last_name"
+    placeholder="Last Name" ng-model="c.data.last_name" ng-required="true" />
+  </div>
 </form>
 ```
 
@@ -116,14 +115,25 @@ The benefit of AngularJS is to allow you to dynamcially assign values to certain
 Take this code for instance:
 
 ```html
-<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"
-    ng-model="c.data.first_name" ng-required="true" />
-<small class="errormsg" ng-show="caaf.first_name.$invalid && caaf.first_name.$dirty">This field is required</small>
+<input
+  type="text"
+  class="form-control"
+  id="first_name"
+  name="first_name"
+  placeholder="First Name"
+  ng-model="c.data.first_name"
+  ng-required="true"
+/>
+<small
+  class="errormsg"
+  ng-show="caaf.first_name.$invalid && caaf.first_name.$dirty"
+  >This field is required</small
+>
 ```
 
-The `ng-show` angular directive takes an expression which can be evaluated to get the desired results of when to show this element and when to hide it. This expression is saying only show this message when the first_name field is invalid and first_name field has been touched ($dirty), since we don't want to show the error message when the form loads before given user a chance to enter a value.
+The `ng-show` angular directive takes an expression which can be evaluated to get the desired results of when to show this element and when to hide it. This expression is saying only show this message when the first_name field is invalid and first_name field has been touched (\$dirty), since we don't want to show the error message when the form loads before given user a chance to enter a value.
 
- `$invalid` and `$dirty` are input states and they have a boolean(true/false) value, we'll get more into this in the validation section.
+`$invalid` and `$dirty` are input states and they have a boolean(true/false) value, we'll get more into this in the validation section.
 
 **Data Binding**
 When `ng-model` is specified with an input, the value of that input is bounded from the View and the Controller (for more info look up Model View Controller - MVC). So if you change that field in the controller (client script), it will automatically be reflected in the view (html) and vice versa. Every input should have this so the controller can make API calls to the server with the latest input data.
@@ -143,8 +153,13 @@ Here are some common providers used in the caaf form:
 
 As mentioned before, AngularJS has validators built into framework. To use this awesome feature, we need to turn off the browser validation since they behave differently depending on the browser, we do this by specifying `novalidate` in our form property.
 
-``` html
-  <form name="caaf" class="css-form" novalidate ng-submit="c.formSubmitted(caaf.$valid)">
+```html
+<form
+  name="caaf"
+  class="css-form"
+  novalidate
+  ng-submit="c.formSubmitted(caaf.$valid)"
+></form>
 ```
 
 **Mandatory Fields**
@@ -152,10 +167,16 @@ Consider the following scenario: we want the CPO Office location field to only b
 
 ```html
 <!-- Conditional Validators -->
-<select name="cpo_office_location" id="cpo_office_location" class="form-control selectpicker" data-live-search="true" ng-model="c.data.cpo_office"
-    ng-required="c.data.insurance_plan == 'cpo'">
-    <option></option>
-    <option ng-repeat="x in c.data.office_location_list">{{::x}}</option>
+<select
+  name="cpo_office_location"
+  id="cpo_office_location"
+  class="form-control selectpicker"
+  data-live-search="true"
+  ng-model="c.data.cpo_office"
+  ng-required="c.data.insurance_plan == 'cpo'"
+>
+  <option></option>
+  <option ng-repeat="x in c.data.office_location_list">{{::x}}</option>
 </select>
 ```
 
@@ -164,13 +185,29 @@ Consider the following scenario: we want the CPO Office location field to only b
 **Phone Number** fields use the `ng-pattern="ph_number"` to validate the pattern of the input. In below example, the `ph_number` variable is initialized in the client controller
 
 ```html
-<input type="text" name="primary_phone" id="primary_phone" class="form-control" ng-pattern="ph_numbr" placeholder="123-456-7890" ng-model="c.data.primary_phone" required />
+<input
+  type="text"
+  name="primary_phone"
+  id="primary_phone"
+  class="form-control"
+  ng-pattern="ph_numbr"
+  placeholder="123-456-7890"
+  ng-model="c.data.primary_phone"
+  required
+/>
 ```
 
 **Email** fields are specified using the `type="email"` property, and AngularJS will validate using the **name@domain** email format.
 
 ```html
-<input type="email" class="form-control" id="sp_email" placeholder="user@example.com" ng-model="c.data.sp.email" required />
+<input
+  type="email"
+  class="form-control"
+  id="sp_email"
+  placeholder="user@example.com"
+  ng-model="c.data.sp.email"
+  required
+/>
 ```
 
 **Form and Input Field States**
@@ -200,8 +237,7 @@ Here we pass the state of the form into the `c.formSubmitted` function which get
 
 ```html
 <!-- HTML -->
-<form name="caaf" novalidate ng-submit="c.formSubmitted(caaf.$valid)">
-
+<form name="caaf" novalidate ng-submit="c.formSubmitted(caaf.$valid)"></form>
 ```
 
 ```javascript
@@ -235,10 +271,16 @@ data.ppo_role_list = getCaafData("PPO Role");
 Then in the View (HTML), we can display the contents of these variables in the dropdown with `ng-repeat`. One thing to note here is I used `{{ ::x }}` instead of `{{ x }}` to one time bind the variable since we're just displaying the values, so there's no need for two way binding, this improves performance.
 
 ```html
-<select name="cpo_access_role" id="cpo_access_role" class="form-control selectpicker"
-    data-live-search="true" ng-model="c.data.cpo_role" ng-required="c.data.insurance_plan == 'cpo'">
-    <option></option>
-    <option ng-repeat="x in c.data.cpo_role_list">{{ ::x }}</option>
+<select
+  name="cpo_access_role"
+  id="cpo_access_role"
+  class="form-control selectpicker"
+  data-live-search="true"
+  ng-model="c.data.cpo_role"
+  ng-required="c.data.insurance_plan == 'cpo'"
+>
+  <option></option>
+  <option ng-repeat="x in c.data.cpo_role_list">{{ ::x }}</option>
 </select>
 ```
 
@@ -253,18 +295,18 @@ The feedback is handled by hiding the input fields and displaying a success or e
 ```html
 <!-- Form submission feedback messages -->
 <div class="row" ng-if="formSubmitted">
-    <div class="col-sm-12">
+  <div class="col-sm-12">
     <div class="text-center">
-        <h3 id="success_message" ng-if="formSubmitionSuccess">
-        Success! Your tracking number is: <strong>{{ c.data.number }}</strong><br />Please save this number for your
-        reference
-        </h3>
-        <h3 id="failure_message" ng-if="!formSubmitionSuccess">
-        Failure! Please contact <strong>GroupServiceCenterTeam@cshs.org</strong> with the current time to
-        troubleshoot
-        </h3>
+      <h3 id="success_message" ng-if="formSubmitionSuccess">
+        Success! Your tracking number is: <strong>{{ c.data.number }}</strong
+        ><br />Please save this number for your reference
+      </h3>
+      <h3 id="failure_message" ng-if="!formSubmitionSuccess">
+        Failure! Please contact <strong>example-email@cshs.org</strong> with the
+        current time to troubleshoot
+      </h3>
     </div>
-    </div>
+  </div>
 </div>
 ```
 
@@ -272,7 +314,7 @@ The feedback is handled by hiding the input fields and displaying a success or e
 
 ```html
 <!-- Fields Section -->
-<div ng-show="!formSubmitted">
+<div ng-show="!formSubmitted"></div>
 ```
 
 ### CSS - Styling the widget
@@ -285,7 +327,7 @@ Most of these are pretty self explanatory, I'll just list the classes here and w
 - `section-title` - style for the section title (INSTRUCTION, ACCOUNT HOLDER INFORMATION, ETT..)
 - `btn-submit` - style for the submit button
 - `errormsg` - style of the error messages when validation fails
-- `.required label:after, label.required:after` - these are added to the label or the div that wraps the label add the "*" to indictae required fields
+- `.required label:after, label.required:after` - these are added to the label or the div that wraps the label add the "\*" to indictae required fields
 - `css-form input.ng-invalid.ng-touched` - highlight input field red when validation fails
 - `css-form input.ng-valid.ng-touched` - highlight input field green when validation passes
 
@@ -302,9 +344,9 @@ c.data.agent = window.navigator.userAgent;
 
 // setup some components that uses 3rd party libraries
 //Need to put it in setTimeout because the DOM is not ready at runtime
-setTimeout(function () {
-    $('select').selectpicker();
-    // $('select').selectpicker('refresh');
+setTimeout(function() {
+  $("select").selectpicker();
+  // $('select').selectpicker('refresh');
 }, 0);
 $("#date_of_birth").datepicker();
 $("#date_of_birth").datepicker("option", "changeYear", true);
@@ -320,7 +362,7 @@ c.data.spomerror = false;
 
 `c.data.agent` gets the current browser and version the user is using to view the form. This helps us debug to see if an issue is related to the browser.
 
-`setTimeout(function () {    $('select').selectpicker(); }, 0);` this allows the select picker to be initialized correctly Tje library needs the DOM to be completely loaded before the `ng-repeat` can populate the dropdown, we set a timeout here.
+`setTimeout(function () { $('select').selectpicker(); }, 0);` this allows the select picker to be initialized correctly Tje library needs the DOM to be completely loaded before the `ng-repeat` can populate the dropdown, we set a timeout here.
 
 `$("#date_of_birth").datepicker();` initializes the datepicker, and the options for that field
 
@@ -335,40 +377,46 @@ c.data.spomerror = false;
 When the form is submitted, `c.formSubmitted` is called. The code is self documented, but bascially it checks to see if the form is valid, it not then focuses on the first invalid element. THen it checks to see if the Sponsor information is selected, if not then it sets the `c.data.spomerror` flag to true, which shows an error message in the HTML. Then it checks the DOB again just in case since we had some issues previously with IE not filling in the DOB. Then finally after all these checks, we submit the form by calling `c.server.update()` which takes a callback function as a parameter. The callback sets flag to display success or failure messages.
 
 ```javascript
-c.formSubmitted = function (valid) {
-    c.data.spomerror = !(c.data.spchecked || c.data.omchecked);
-    // Check if the form is valid
-    if (!valid) {
-        // console.log($scope.caaf.$error.required);
-        angular.element('input.ng-invalid, select.ng-invalid').first().focus();
-    }
-    // Check if at least one sponsor information is provided
-    else if (c.data.spomerror) {
-        angular.element('#spcheck').focus();
-    }
-    // Double check DOB since IE is buggy
-    else if (c.data.date_of_birth == '' || c.data.date_of_birth == undefined) {
-        angular.element("#date_of_birth").focus();
-    }
-    // finally make the Server call to submit the ticket
-    else {
-        $("#FSsubmit").attr("disabled", true);
-        $("#FSsubmit").html("Submitting...");
+c.formSubmitted = function(valid) {
+  c.data.spomerror = !(c.data.spchecked || c.data.omchecked);
+  // Check if the form is valid
+  if (!valid) {
+    // console.log($scope.caaf.$error.required);
+    angular
+      .element("input.ng-invalid, select.ng-invalid")
+      .first()
+      .focus();
+  }
+  // Check if at least one sponsor information is provided
+  else if (c.data.spomerror) {
+    angular.element("#spcheck").focus();
+  }
+  // Double check DOB since IE is buggy
+  else if (c.data.date_of_birth == "" || c.data.date_of_birth == undefined) {
+    angular.element("#date_of_birth").focus();
+  }
+  // finally make the Server call to submit the ticket
+  else {
+    $("#FSsubmit").attr("disabled", true);
+    $("#FSsubmit").html("Submitting...");
 
-        c.server.update().then(function (result) {
-            console.log(result);
-            $scope.formSubmitted = true;
-            $scope.formSubmitionSuccess = true;
-        }, function (err) {
-            $scope.formSubmitted = true;
-            $scope.formSubmitionSuccess = false;
-        });
-    }
+    c.server.update().then(
+      function(result) {
+        console.log(result);
+        $scope.formSubmitted = true;
+        $scope.formSubmitionSuccess = true;
+      },
+      function(err) {
+        $scope.formSubmitted = true;
+        $scope.formSubmitionSuccess = false;
+      }
+    );
+  }
 
-    // Future enhancement - redirect to new page for better feedback
-    // Need to inject $location service in controller parameter to use angular's $location service 
-    // $location.url("/cs_public?id=caaf_submitted");
-}
+  // Future enhancement - redirect to new page for better feedback
+  // Need to inject $location service in controller parameter to use angular's $location service
+  // $location.url("/cs_public?id=caaf_submitted");
+};
 ```
 
 ### The server script
@@ -386,29 +434,29 @@ data.cpo_role_list = getCaafData("CPO Role");
 data.ppo_role_list = getCaafData("PPO Role");
 
 function getCaafData(dataPoint) {
-    var returnArr = [];
-    var gr = new GlideRecord("u_caaf_data");
-    gr.addQuery("u_type", dataPoint);
-    gr.orderBy("u_sequence");
-    gr.query();
-    while (gr.next()) {
-        returnArr.push(gr.getDisplayValue());
-    }
-    return returnArr;
+  var returnArr = [];
+  var gr = new GlideRecord("u_caaf_data");
+  gr.addQuery("u_type", dataPoint);
+  gr.orderBy("u_sequence");
+  gr.query();
+  while (gr.next()) {
+    returnArr.push(gr.getDisplayValue());
+  }
+  return returnArr;
 }
 ```
 
 #### Demo Data for testing
 
 ```javascript
-var testing = gs.getProperty("instance_name") != "csmc";
+var testing = gs.getProperty("instance_name") != "<prod-instance>";
 ```
 
-If the instance is not csmc, then testing mode is enabled, which fills demo data into each field, this saves a lot of time in the development phase.
+If the instance is not PROD, then testing mode is enabled, which fills demo data into each field, this saves a lot of time in the development phase.
 
 #### Processing the `c.server.update()`
 
-When `c.server.update()` is called from the controller, `c.data` is copied into `input` object in the server script. We then use the `input` data received to build an object that passes into the `CartJS` API to order the CAAF catalog item. 
+When `c.server.update()` is called from the controller, `c.data` is copied into `input` object in the server script. We then use the `input` data received to build an object that passes into the `CartJS` API to order the CAAF catalog item.
 
 ```javascript
 if (input) {
@@ -438,7 +486,8 @@ Finally we set `data.number` to the number that was return from the order. And s
 ```html
 <!-- Feedback Message -->
 <h3 id="success_message" ng-if="formSubmitionSuccess">
-    Success! Your tracking number is: <strong>{{ c.data.number }}</strong><br />Please save this number for your reference
+  Success! Your tracking number is: <strong>{{ c.data.number }}</strong
+  ><br />Please save this number for your reference
 </h3>
 ```
 
