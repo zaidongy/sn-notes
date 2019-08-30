@@ -54,7 +54,7 @@ Bootstrap is a collection of CSS classes that allow the web page to be styled in
 
 ### The HTML Code
 
-The HTML code defines the structure of the widget. Using the Bootstrap grid system, we are able to easily contorl where components should go and the boostrap classes will style them for us. That combined with the Bootstrap form controls will create a consistnent user experience.
+The HTML code defines the structure of the widget. Using the Bootstrap grid system, we are able to easily control where components should go and the boostrap classes will style them for us. That combined with the Bootstrap form controls will create a consistnent user experience.
 
 #### Bootstrap Grid System
 
@@ -102,7 +102,7 @@ Here is the basic structure of a form with Bootstrap
 
 1. We start with the `form` element
 2. Then for each group of inputs we can wrap them in a `form-group`
-3. Then we can create our `label` and `input` tags, be sure to give the input the form-control class
+3. Then we can create our `label` and `input` tags, be sure to give the input the `form-control` class
 
 #### Combining the two concepts
 
@@ -324,10 +324,10 @@ Even though Bootstrap provides us with many classes to consistently style the co
 Most of these are pretty self explanatory, I'll just list the classes here and where it's used, and you can look at the source code to see the stylings applied
 
 - `form-title` - style for the title (CAAF)
-- `section-title` - style for the section title (INSTRUCTION, ACCOUNT HOLDER INFORMATION, ETT..)
+- `section-title` - style for the section title (INSTRUCTION, ACCOUNT HOLDER INFORMATION, ETc..)
 - `btn-submit` - style for the submit button
 - `errormsg` - style of the error messages when validation fails
-- `.required label:after, label.required:after` - these are added to the label or the div that wraps the label add the "\*" to indictae required fields
+- `.required label:after, label.required:after` - these are added to the label or the div that wraps the label add the "\*" to indicate required fields
 - `css-form input.ng-invalid.ng-touched` - highlight input field red when validation fails
 - `css-form input.ng-valid.ng-touched` - highlight input field green when validation passes
 
@@ -374,7 +374,7 @@ c.data.spomerror = false;
 
 #### Form Submission Handler
 
-When the form is submitted, `c.formSubmitted` is called. The code is self documented, but bascially it checks to see if the form is valid, it not then focuses on the first invalid element. THen it checks to see if the Sponsor information is selected, if not then it sets the `c.data.spomerror` flag to true, which shows an error message in the HTML. Then it checks the DOB again just in case since we had some issues previously with IE not filling in the DOB. Then finally after all these checks, we submit the form by calling `c.server.update()` which takes a callback function as a parameter. The callback sets flag to display success or failure messages.
+When the form is submitted, `c.formSubmitted` is called. The code is self documented, but bascially it checks to see if the form is valid, it not then focuses on the first invalid element. Then it checks to see if the Sponsor information is selected, if not then it sets the `c.data.spomerror` flag to true, which shows an error message in the HTML. Then it checks the DOB again just in case since we had some issues previously with IE not filling in the DOB. Then finally after all these checks, we submit the form by calling `c.server.update()` which takes a callback function as a parameter. The callback sets flag to display success or failure messages.
 
 ```javascript
 c.formSubmitted = function(valid) {
@@ -421,7 +421,7 @@ c.formSubmitted = function(valid) {
 
 ### The server script
 
-The server script has two funtions. Initialize variables from the server to display them in the view, and also process `c.server.update()` with the data object as input. Let's walk through it.
+The server script has two functions. Initialize variables from the server to display them in the view, and also process `c.server.update()` with the data object as input. Let's walk through it.
 
 #### Initilizaing the dropdowns
 
