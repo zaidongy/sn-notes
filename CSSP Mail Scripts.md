@@ -1,5 +1,28 @@
 # Notifications
 
+There are 3 main modules you'll be working with in the notifications
+
+1. **Notification Records** - Configure when notification is sent and the recipients of the notification
+2. **Notification Templates** - Reusable templates for the notification records to use, this is to group similar notifications
+3. **Email Scripts** - Custom scripts that allow content to be dynamically generated. Useful in making the notifications modular and reusable
+
+## Table of Contents
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Notifications](#notifications)
+  - [Table of Contents](#table-of-contents)
+  - [Notification Table Structure](#notification-table-structure)
+  - [Add or remove sections from the table](#add-or-remove-sections-from-the-table)
+  - [Styling](#styling)
+  - [Mail Scripts](#mail-scripts)
+  - [General / Miscellaneous Tips](#general-miscellaneous-tips)
+  - [Author](#author)
+
+<!-- /code_chunk_output -->
+
 ## Notification Table Structure
 
 The structure of the table is made from tables, rows, and cells, bascially wrap everything in a cell to format the notification. A cell is defined by the `<td></td>` tag, and cells can have other tables embedded within them. Here is the requisition form approval template as an example.
@@ -200,3 +223,7 @@ Mail scripts are used to generate content dynamically and enable reusability. Th
 - Send to event creator
   - If not checked, this gathers up all the recipient field of the notificationa and organizest them into an array, and at the very **END**, it'll remove the person who triggered the notification from the list (condition builder included)
 - Be careful of what styles you put in the notifcation. ServiceNow will automatically remove some styles, and then each mail client may remove styles as well. Always test on multiple platforms (including mobile)
+
+## Author
+
+Chris Yang - [zaidongy@gmail.com](mailto:zaidongy@gmail.com)
